@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumorb - プライバシーポリシー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-top: rgb(127, 191, 242);
+            --sky-mid: rgb(179, 217, 247);
+            --sky-bottom: rgb(247, 247, 250);
+            --cloud-white: rgba(255, 255, 255, 0.85);
+            --text-primary: rgba(40, 60, 90, 0.95);
+            --text-secondary: rgba(60, 80, 110, 0.75);
+            --accent-blue: rgb(90, 150, 220);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'M PLUS Rounded 1c', 'Zen Maru Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg,
+                var(--sky-top) 0%,
+                var(--sky-mid) 50%,
+                var(--sky-bottom) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 浮遊する雲の装飾 */
+        .cloud {
+            position: fixed;
+            background: radial-gradient(ellipse at center,
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .cloud-1 {
+            width: 300px;
+            height: 120px;
+            top: 10%;
+            left: -50px;
+            animation-delay: 0s;
+        }
+
+        .cloud-2 {
+            width: 250px;
+            height: 100px;
+            top: 30%;
+            right: -30px;
+            animation-delay: 3s;
+        }
+
+        .cloud-3 {
+            width: 200px;
+            height: 80px;
+            top: 60%;
+            left: 10%;
+            animation-delay: 6s;
+        }
+
+        .cloud-4 {
+            width: 180px;
+            height: 70px;
+            top: 80%;
+            right: 15%;
+            animation-delay: 9s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.4;
+            }
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--sky-mid));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 8px 24px rgba(90, 150, 220, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 24px rgba(90, 150, 220, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 32px rgba(90, 150, 220, 0.4);
+            }
+        }
+
+        .app-name {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* カードスタイル */
+        .card {
+            background: var(--cloud-white);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(40, 60, 90, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+        .card:nth-child(5) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-blue), var(--sky-mid));
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 24px 0 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding-left: 24px;
+            margin-bottom: 12px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        li::before {
+            content: '☁️';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg,
+                rgba(127, 191, 242, 0.15),
+                rgba(179, 217, 247, 0.15));
+            border-left: 4px solid var(--accent-blue);
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid rgba(127, 191, 242, 0.2);
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 32px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .last-updated {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 20px 60px;
+            }
+
+            .app-name {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 28px 24px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .cloud {
+                opacity: 0.5;
+            }
+        }
+
+        /* スクロールアニメーション用 */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- 装飾用の雲 -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <div class="app-icon">☁️</div>
+            <h1 class="app-name">Kumorb</h1>
+            <p class="subtitle">プライバシーポリシー</p>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main>
+            <section class="card">
+                <h2>はじめに</h2>
+                <p>
+                    Kumorb（クモーブ）は、グラフを軸にした天気予報アプリです。
+                    このプライバシーポリシーでは、アプリがどのように情報を扱うかを説明します。
+                </p>
+                <div class="highlight-box">
+                    <strong>重要：</strong>Kumorbは、個人情報をサーバーや端末に保存しません。
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>収集する情報</h2>
+                <h3>位置情報</h3>
+                <ul>
+                    <li><strong>収集するタイミング：</strong>アプリを使用中のみ、都度取得します</li>
+                    <li><strong>保存について：</strong>サーバーにも端末にも保存しません</li>
+                    <li><strong>利用目的：</strong>現在地の天気情報を表示するためのみ使用します</li>
+                </ul>
+                <p>
+                    位置情報は天気データ取得のためにのみ使用され、取得後すぐに破棄されます。
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>外部サービスとの連携</h2>
+                <h3>Open-Meteo API</h3>
+                <p>
+                    天気データの取得のために、Open-Meteo API を使用しています。
+                    このサービスには、お客様の位置情報（緯度・経度）を送信します。
+                </p>
+                <p>
+                    Open-Meteo のプライバシーポリシーについては、以下をご確認ください：<br>
+                    <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/terms</a>
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>広告・課金について</h2>
+                <ul>
+                    <li><strong>広告：</strong>Kumorbには広告は一切表示されません</li>
+                    <li><strong>課金：</strong>現在、アプリ内課金はありません（将来的に検討する可能性があります）</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>対象年齢・地域</h2>
+                <ul>
+                    <li><strong>対象年齢：</strong>全年齢対象</li>
+                    <li><strong>対象地域：</strong>現在は主に日本国内向けにサービスを提供しています</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>プライバシーポリシーの変更</h2>
+                <p>
+                    本プライバシーポリシーは、必要に応じて変更される場合があります。
+                    重要な変更がある場合は、アプリ内またはこのページでお知らせします。
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>お問い合わせ</h2>
+                <div class="contact-info">
+                    <p><strong>開発者：</strong>crgstar</p>
+                    <p><strong>連絡先：</strong><a href="mailto:crgstar0122@gmail.com">crgstar0122@gmail.com</a></p>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p>© 2025 crgstar. All rights reserved.</p>
+            <div class="last-updated">最終更新日：2025年1月9日</div>
+        </footer>
+    </div>
+
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // パフォーマンス最適化：モバイルでは雲のアニメーションを簡略化
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            document.querySelectorAll('.cloud').forEach(cloud => {
+                cloud.style.animationDuration = '30s';
+            });
+        }
+    </script>
+</body>
+</html>
