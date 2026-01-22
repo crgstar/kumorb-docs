@@ -1,0 +1,52 @@
+*.local.*
+.claude/*.sh
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Build
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/xcode/
+Packages/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+*.swp
+*.swo
+*~
+.idea/
+*.hmap
+
+# Secrets (if any)
+*.xcconfig
+!Config/*.xcconfig
+
+# Archives
+*.xcarchive
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Xcode Cloud
+ci_scripts/
+
+# Git worktrees
+.worktrees/
