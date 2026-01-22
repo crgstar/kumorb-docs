@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumorb - Privacy Policy</title>
-    <link rel="alternate" hreflang="ja" href="/ja/" />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <link rel="alternate" hreflang="es" href="/es/" />
-    <link rel="alternate" hreflang="x-default" href="/en/" />
+    <link rel="alternate" hreflang="ja" href="./ja/" />
+    <link rel="alternate" hreflang="en" href="./en/" />
+    <link rel="alternate" hreflang="es" href="./es/" />
+    <link rel="alternate" hreflang="x-default" href="./en/" />
     <style>
         :root {
             --bg-deep: #0d1220;
@@ -94,11 +94,11 @@
             var langCode = lang.toLowerCase().split('-')[0];
 
             var redirectMap = {
-                'ja': '/ja/',
-                'es': '/es/'
+                'ja': './ja/',
+                'es': './es/'
             };
 
-            var target = redirectMap[langCode] || '/en/';
+            var target = redirectMap[langCode] || './en/';
             window.location.replace(target);
         })();
     </script>
@@ -110,9 +110,9 @@
         <noscript>
             <p class="redirect-text">Please select your language:</p>
             <div class="lang-links">
-                <a href="/ja/" lang="ja">日本語</a>
-                <a href="/en/" lang="en">English</a>
-                <a href="/es/" lang="es">Español</a>
+                <a href="./ja/" lang="ja">日本語</a>
+                <a href="./en/" lang="en">English</a>
+                <a href="./es/" lang="es">Español</a>
             </div>
         </noscript>
     </div>
