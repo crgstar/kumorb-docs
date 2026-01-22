@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumorb - プライバシーポリシー</title>
+    <title>Kumorb - Privacy Policy</title>
+    <link rel="alternate" hreflang="ja" href="/ja/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="es" href="/es/" />
+    <link rel="alternate" hreflang="x-default" href="/en/" />
     <style>
         :root {
-            /* Navy-Gray Base */
             --bg-deep: #0d1220;
             --bg-primary: #141c2e;
-            --bg-secondary: #1a2540;
-            --bg-tertiary: #243051;
-
-            /* Accent Blues */
-            --accent-primary: #5a7eb8;
-            --accent-secondary: #8aa8d4;
-            --accent-glow: rgba(90, 126, 184, 0.15);
-
-            /* Text Colors */
             --text-primary: #e4e8f0;
             --text-secondary: #9aa3b8;
-            --text-muted: #6b7590;
-
-            /* Decorative */
-            --border-subtle: rgba(138, 168, 212, 0.12);
+            --accent-primary: #5a7eb8;
+            --accent-secondary: #8aa8d4;
         }
 
         * {
@@ -32,539 +24,97 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
-            background: var(--bg-deep);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(175deg, var(--bg-deep) 0%, var(--bg-primary) 100%);
             min-height: 100vh;
             color: var(--text-primary);
-            line-height: 1.85;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Mesh Gradient Background */
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse 80% 60% at 15% 20%, rgba(58, 90, 140, 0.25) 0%, transparent 55%),
-                radial-gradient(ellipse 70% 50% at 85% 15%, rgba(70, 100, 150, 0.18) 0%, transparent 50%),
-                radial-gradient(ellipse 90% 70% at 50% 90%, rgba(50, 80, 130, 0.2) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 75% 60%, rgba(80, 110, 160, 0.12) 0%, transparent 45%),
-                radial-gradient(ellipse 50% 35% at 25% 70%, rgba(60, 95, 145, 0.15) 0%, transparent 50%),
-                linear-gradient(175deg, var(--bg-deep) 0%, var(--bg-primary) 40%, var(--bg-secondary) 100%);
-            z-index: 0;
-        }
-
-        /* Majestic Cloud SVGs */
-        .cloud-layer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .cloud {
-            position: absolute;
-            filter: blur(12px);
-        }
-
-        .cloud-1 {
-            width: 650px;
-            height: 260px;
-            top: 0%;
-            animation: drift var(--duration-1, 75s) linear infinite;
-            animation-delay: var(--delay-1, 0s);
-            opacity: 1;
-        }
-
-        .cloud-2 {
-            width: 500px;
-            height: 290px;
-            top: 5%;
-            animation: drift var(--duration-2, 55s) linear infinite;
-            animation-delay: var(--delay-2, 0s);
-            opacity: 0.9;
-        }
-
-        .cloud-3 {
-            width: 600px;
-            height: 240px;
-            top: 2%;
-            animation: drift var(--duration-3, 90s) linear infinite;
-            animation-delay: var(--delay-3, 0s);
-            opacity: 0.85;
-        }
-
-        @keyframes drift {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(calc(100vw + 100%));
-            }
-        }
-
-        /* Container */
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 60px 28px 100px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 80px;
-            opacity: 0;
-            animation: fade-in 1s ease-out 0.2s forwards;
-        }
-
-        .app-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 24px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .app-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: var(--accent-secondary);
-            filter: drop-shadow(0 4px 20px rgba(138, 168, 212, 0.3));
+        .redirect-container {
+            text-align: center;
+            padding: 40px;
         }
 
-        .app-name {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-            letter-spacing: 0.04em;
-        }
-
-        .subtitle {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        /* Content Sections */
-        main {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-        }
-
-        section {
-            opacity: 0;
-            transform: translateY(24px);
-            animation: slide-up 0.7s ease-out forwards;
-        }
-
-        section:nth-child(1) { animation-delay: 0.3s; }
-        section:nth-child(2) { animation-delay: 0.4s; }
-        section:nth-child(3) { animation-delay: 0.5s; }
-        section:nth-child(4) { animation-delay: 0.6s; }
-        section:nth-child(5) { animation-delay: 0.7s; }
-        section:nth-child(6) { animation-delay: 0.8s; }
-        section:nth-child(7) { animation-delay: 0.9s; }
-
-        @keyframes slide-up {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fade-in {
-            to {
-                opacity: 1;
-            }
-        }
-
-        h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            letter-spacing: 0.02em;
-        }
-
-        h2::before {
-            content: '';
-            display: block;
-            width: 3px;
-            height: 22px;
-            background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-
-        h3 {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            margin: 28px 0 14px;
-            padding-left: 17px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .highlight {
-            background: var(--accent-glow);
-            border-left: 2px solid var(--accent-primary);
-            padding: 16px 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-        }
-
-        .highlight p {
-            margin: 0;
-            color: var(--text-primary);
-        }
-
-        .highlight strong {
-            color: var(--accent-secondary);
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            padding: 10px 0 10px 32px;
-            position: relative;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        li::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 18px;
-            width: 6px;
-            height: 6px;
-            background: var(--accent-primary);
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--accent-primary);
+            border-top-color: transparent;
             border-radius: 50%;
-            opacity: 0.7;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
         }
 
-        li strong {
-            color: var(--text-primary);
-            font-weight: 500;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
 
-        a {
+        .redirect-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .lang-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .lang-links a {
             color: var(--accent-secondary);
             text-decoration: none;
-            font-weight: 400;
-            transition: color 0.2s ease;
-            border-bottom: 1px solid transparent;
+            padding: 10px 20px;
+            border: 1px solid var(--accent-primary);
+            border-radius: 8px;
+            transition: all 0.2s ease;
         }
 
-        a:hover {
+        .lang-links a:hover {
+            background: rgba(90, 126, 184, 0.15);
             color: var(--text-primary);
-            border-bottom-color: var(--accent-secondary);
         }
 
-        /* Section Divider */
-        section + section {
-            padding-top: 48px;
-            border-top: 1px solid var(--border-subtle);
+        noscript .lang-links {
+            margin-top: 0;
         }
 
-        /* Contact Section */
-        .contact-info {
-            text-align: center;
-            padding: 24px 0 0;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 80px;
-            padding: 32px 0;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            opacity: 0;
-            animation: fade-in 1s ease-out 1.2s forwards;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 20px 80px;
-            }
-
-            .header {
-                margin-bottom: 60px;
-            }
-
-            .app-icon {
-                width: 60px;
-                height: 60px;
-            }
-
-            .app-name {
-                font-size: 1.8rem;
-            }
-
-            .subtitle {
-                font-size: 0.85rem;
-            }
-
-            main {
-                gap: 36px;
-            }
-
-            section + section {
-                padding-top: 36px;
-            }
-
-            h2 {
-                font-size: 1.15rem;
-            }
-
-            .cloud-1 {
-                width: 420px;
-                height: 170px;
-            }
-
-            .cloud-2 {
-                width: 320px;
-                height: 185px;
-            }
-
-            .cloud-3 {
-                width: 380px;
-                height: 150px;
-            }
-
-            .cloud {
-                filter: blur(10px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .cloud {
-                filter: blur(8px);
-            }
-
-            .cloud-1 { width: 300px; height: 120px; opacity: 0.9; }
-            .cloud-2 { width: 240px; height: 140px; opacity: 0.85; }
-            .cloud-3 { width: 280px; height: 110px; opacity: 0.8; }
-        }
-
-        /* Reduced Motion */
-        @media (prefers-reduced-motion: reduce) {
-            .cloud {
-                animation: none;
-                left: 10%;
-            }
-
-            .cloud-2 {
-                left: 40%;
-            }
-
-            .cloud-3 {
-                left: 60%;
-            }
-
-            section {
-                animation: none;
-                opacity: 1;
-                transform: none;
-            }
-
-            .header {
-                animation: none;
-                opacity: 1;
-            }
-
-            .footer {
-                animation: none;
-                opacity: 1;
-            }
+        noscript .redirect-text {
+            margin-bottom: 20px;
         }
     </style>
-</head>
-<body>
-    <!-- Mesh Gradient Background -->
-    <div class="mesh-bg"></div>
-
-    <!-- Cloud Layer -->
-    <div class="cloud-layer">
-        <!-- Cloud 1 - 積雲A: 大きく横に広がる形 -->
-        <svg class="cloud cloud-1" viewBox="0 0 800 320" preserveAspectRatio="none">
-            <defs>
-                <radialGradient id="cloud1-grad" cx="50%" cy="35%" r="65%" fx="50%" fy="25%">
-                    <stop offset="0%" stop-color="rgba(240, 245, 255, 0.55)"/>
-                    <stop offset="40%" stop-color="rgba(200, 215, 235, 0.4)"/>
-                    <stop offset="100%" stop-color="rgba(140, 160, 190, 0.15)"/>
-                </radialGradient>
-            </defs>
-            <path d="M60,260 C40,240 50,200 90,190 C80,160 120,130 170,140 C180,100 240,80 300,95 C330,60 400,50 460,70 C500,45 580,55 620,85 C670,65 730,90 750,130 C790,140 810,180 790,220 C810,250 780,290 720,285 C700,310 620,320 560,300 C500,325 400,315 350,290 C280,320 180,310 140,280 C90,300 50,280 60,260 Z" fill="rgba(100, 120, 150, 0.2)" transform="translate(5, 8)"/>
-            <path d="M60,260 C40,240 50,200 90,190 C80,160 120,130 170,140 C180,100 240,80 300,95 C330,60 400,50 460,70 C500,45 580,55 620,85 C670,65 730,90 750,130 C790,140 810,180 790,220 C810,250 780,290 720,285 C700,310 620,320 560,300 C500,325 400,315 350,290 C280,320 180,310 140,280 C90,300 50,280 60,260 Z" fill="url(#cloud1-grad)"/>
-            <path d="M170,140 C210,110 270,100 310,115 M430,75 C490,55 560,70 600,100" fill="none" stroke="rgba(255, 255, 255, 0.3)" stroke-width="22" stroke-linecap="round"/>
-        </svg>
-
-        <!-- Cloud 2 - 積雲B: 中央が高くそびえる形 -->
-        <svg class="cloud cloud-2" viewBox="0 0 600 350" preserveAspectRatio="none">
-            <defs>
-                <radialGradient id="cloud2-grad" cx="50%" cy="30%" r="70%" fx="45%" fy="20%">
-                    <stop offset="0%" stop-color="rgba(245, 248, 255, 0.55)"/>
-                    <stop offset="45%" stop-color="rgba(210, 220, 240, 0.4)"/>
-                    <stop offset="100%" stop-color="rgba(150, 170, 200, 0.12)"/>
-                </radialGradient>
-            </defs>
-            <path d="M80,290 C50,270 60,230 100,220 C90,190 130,160 180,170 C175,130 220,90 280,85 C290,50 350,30 400,55 C450,35 500,60 510,100 C550,95 580,130 570,170 C600,190 590,240 550,260 C570,290 530,320 470,310 C430,340 340,335 290,310 C230,340 140,330 110,300 C70,315 50,295 80,290 Z" fill="rgba(100, 120, 150, 0.2)" transform="translate(4, 7)"/>
-            <path d="M80,290 C50,270 60,230 100,220 C90,190 130,160 180,170 C175,130 220,90 280,85 C290,50 350,30 400,55 C450,35 500,60 510,100 C550,95 580,130 570,170 C600,190 590,240 550,260 C570,290 530,320 470,310 C430,340 340,335 290,310 C230,340 140,330 110,300 C70,315 50,295 80,290 Z" fill="url(#cloud2-grad)"/>
-            <path d="M200,160 C230,120 270,100 300,105 M370,60 C410,45 470,65 500,100" fill="none" stroke="rgba(255, 255, 255, 0.28)" stroke-width="20" stroke-linecap="round"/>
-        </svg>
-
-        <!-- Cloud 3 - 積雲C: 左右非対称でゆるやかな形 -->
-        <svg class="cloud cloud-3" viewBox="0 0 750 300" preserveAspectRatio="none">
-            <defs>
-                <radialGradient id="cloud3-grad" cx="45%" cy="35%" r="65%" fx="40%" fy="25%">
-                    <stop offset="0%" stop-color="rgba(235, 242, 255, 0.52)"/>
-                    <stop offset="50%" stop-color="rgba(195, 210, 235, 0.38)"/>
-                    <stop offset="100%" stop-color="rgba(130, 155, 185, 0.12)"/>
-                </radialGradient>
-            </defs>
-            <path d="M50,240 C30,220 45,180 85,175 C70,145 110,110 165,120 C185,85 250,70 310,80 C340,55 410,50 470,75 C530,55 590,75 620,110 C670,100 720,140 710,185 C740,210 720,260 660,260 C650,290 570,300 500,280 C430,305 330,295 270,270 C200,295 110,285 80,255 C40,270 30,250 50,240 Z" fill="rgba(100, 120, 150, 0.18)" transform="translate(5, 8)"/>
-            <path d="M50,240 C30,220 45,180 85,175 C70,145 110,110 165,120 C185,85 250,70 310,80 C340,55 410,50 470,75 C530,55 590,75 620,110 C670,100 720,140 710,185 C740,210 720,260 660,260 C650,290 570,300 500,280 C430,305 330,295 270,270 C200,295 110,285 80,255 C40,270 30,250 50,240 Z" fill="url(#cloud3-grad)"/>
-            <path d="M165,120 C200,90 260,80 300,90 M440,70 C500,55 570,80 610,115" fill="none" stroke="rgba(255, 255, 255, 0.26)" stroke-width="22" stroke-linecap="round"/>
-        </svg>
-    </div>
-
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="app-icon">
-                <svg viewBox="0 0 100 100">
-                    <path d="M85,65 C85,52 75,42 62,42 C61,42 60,42 59,42.2 C56,32 47,25 36,25 C22,25 11,36 11,50 C11,50.5 11,51 11,51.5 C6,53 2,58 2,64 C2,72 8,78 16,78 L80,78 C83,78 85,76 85,73 L85,65 Z M80,74 L16,74 C10,74 6,70 6,64 C6,59 9,55 14,54 L15,53.5 L15,52.5 C15,52 15,51 15,50 C15,38 24,29 36,29 C46,29 54,36 56,46 L57,48 L59,47.5 C60,47 61,47 62,47 C73,47 81,54 81,65 L81,73 C81,73.5 80.5,74 80,74 Z"/>
-                </svg>
-            </div>
-            <h1 class="app-name">Kumorb</h1>
-            <p class="subtitle">Privacy Policy</p>
-        </header>
-
-        <!-- Main Content -->
-        <main>
-            <section>
-                <h2>はじめに</h2>
-                <p>Kumorb（クモーブ）は、グラフ表示に特化した天気予報アプリです。本アプリでの情報の取り扱いについて説明します。</p>
-                <div class="highlight">
-                    <p><strong>重要：</strong>本アプリは個人情報をサーバーおよび端末に保存しません。</p>
-                </div>
-            </section>
-
-            <section>
-                <h2>収集する情報</h2>
-                <h3>位置情報</h3>
-                <ul>
-                    <li><strong>取得タイミング：</strong>アプリ使用中のみ、都度取得</li>
-                    <li><strong>保存：</strong>サーバー・端末ともに保存なし</li>
-                    <li><strong>利用目的：</strong>現在地の天気情報表示のみ</li>
-                </ul>
-                <p>位置情報は天気データ取得後、即時破棄されます。</p>
-            </section>
-
-            <section>
-                <h2>外部サービス連携</h2>
-                <h3>Open-Meteo API</h3>
-                <p>天気データ取得にOpen-Meteo APIを使用します。位置情報（緯度・経度）を送信します。</p>
-                <p>Open-Meteoの利用規約：<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">https://open-meteo.com/en/terms</a></p>
-            </section>
-
-            <section>
-                <h2>広告・課金</h2>
-                <ul>
-                    <li><strong>広告：</strong>表示なし</li>
-                    <li><strong>課金：</strong>現在なし（将来変更の可能性あり）</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>対象年齢・地域</h2>
-                <ul>
-                    <li><strong>対象年齢：</strong>全年齢</li>
-                    <li><strong>対象地域：</strong>日本国内</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>ポリシーの変更</h2>
-                <p>本ポリシーは必要に応じて変更される場合があります。重要な変更はアプリ内または本ページで通知します。</p>
-            </section>
-
-            <section>
-                <h2>お問い合わせ</h2>
-                <div class="contact-info">
-                    <p><strong>開発者：</strong>crgstar</p>
-                    <p><strong>連絡先：</strong><a href="mailto:kumorb.toiawase@gmail.com">kumorb.toiawase@gmail.com</a></p>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 crgstar. All rights reserved.</p>
-        </footer>
-    </div>
     <script>
-        // Randomize cloud positions and speeds on each page load
         (function() {
-            const root = document.documentElement;
+            var lang = navigator.language || navigator.userLanguage || 'en';
+            var langCode = lang.toLowerCase().split('-')[0];
 
-            // Random delay (negative to start mid-animation)
-            const delay1 = -Math.random() * 75;
-            const delay2 = -Math.random() * 55;
-            const delay3 = -Math.random() * 90;
+            var redirectMap = {
+                'ja': '/ja/',
+                'es': '/es/'
+            };
 
-            // Slightly vary duration (±15%)
-            const duration1 = 75 + (Math.random() - 0.5) * 22;
-            const duration2 = 55 + (Math.random() - 0.5) * 16;
-            const duration3 = 90 + (Math.random() - 0.5) * 27;
-
-            root.style.setProperty('--delay-1', delay1 + 's');
-            root.style.setProperty('--delay-2', delay2 + 's');
-            root.style.setProperty('--delay-3', delay3 + 's');
-            root.style.setProperty('--duration-1', duration1 + 's');
-            root.style.setProperty('--duration-2', duration2 + 's');
-            root.style.setProperty('--duration-3', duration3 + 's');
+            var target = redirectMap[langCode] || '/en/';
+            window.location.replace(target);
         })();
     </script>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="spinner"></div>
+        <p class="redirect-text">Redirecting...</p>
+        <noscript>
+            <p class="redirect-text">Please select your language:</p>
+            <div class="lang-links">
+                <a href="/ja/" lang="ja">日本語</a>
+                <a href="/en/" lang="en">English</a>
+                <a href="/es/" lang="es">Español</a>
+            </div>
+        </noscript>
+    </div>
 </body>
 </html>
